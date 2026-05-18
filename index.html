@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheeni Didi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        footer {
+            animation: fadeBounce 2s ease-in, bounce 2s infinite alternate;
+            text-align: center;
+            color: #0074d9;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        @keyframes fadeBounce {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        body {
+            background-color: #7fdbff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0 10px;
+            transition: background 0.5s;
+        }
+        h1 {
+            text-align: center;
+            color: #003366;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.92);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 24px 18px 32px 18px;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 14px;
+            display: block;
+            margin: 18px auto 10px auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+            transition: transform 0.2s;
+        }
+        img:hover {
+            transform: scale(1.04) rotate(-2deg);
+        }
+        .btn {
+            background: #0074d9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 12px 8px 0 0;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #005fa3;
+            transform: scale(1.06);
+        }
+
+        a {
+            color: #0074d9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #005fa3;
+            text-decoration: underline;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background: #b2f7ef;
+            margin: 30px 0;
+        }
+        .about-me {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 30px 0 0 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .about-me img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            display: block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .about-me h2 {
+            text-align: center;
+            margin: 10px 0 6px 0;
+            color: #0074d9;
+        }
+        .about-me p {
+            text-align: center;
+            font-size: 1rem;
+            color: #003366;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px 2vw 20px 2vw;
+            }
+            img {
+                max-width: 95vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cheeni Didi</h1>
+        <hr>
+        <img src="https://i.ibb.co/V0GW6hVb/file.jpg" alt="Orca in the wild">
+        <div style="text-align:center;">
+            <button class="btn" onclick="changeBackground()">Change Background</button>
+            <button class="btn" onclick="resetPage()">Reset</button>
+        </div>
+
+        <hr>
+        <div class="about-me">
+            <img src="https://ui-avatars.com/api/?name=D&background=0074d9&color=fff&size=90" alt="Divyank's Avatar">
+            <h2>About the Author</h2>
+            <p>
+                Hi! I'm <b>Divyank</b>, a curious learner and aspiring web developer.<br>
+                I enjoy exploring the wonders of nature and technology.<br>
+                Thanks for visiting!
+
+            </p>
+        </div>
+        <footer>
+            Made by Divyank <br><br>
+        </footer>
+    </div>
+
+    <script>
+        const colors = [
+            '#7fdbff', '#b2f7ef', '#e0f7fa', '#cce7ff', '#f0f8ff',
+            '#e6ffe6', '#fffbe6', '#ffe6fa', '#f9e6ff', '#e6f9ff'
+        ];
+       
+        function changeBackground() {
+            let current = document.body.style.backgroundColor;
+            let newColor;
+            do {
+                newColor = colors[Math.floor(Math.random() * colors.length)];
+            } while (newColor === current);
+            document.body.style.backgroundColor = newColor;
+        }
+
+        function resetPage() {
+            document.body.style.backgroundColor = '#7fdbff';
+        }
+
+    </script>
+</body>
+</html>
